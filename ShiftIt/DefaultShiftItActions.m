@@ -22,8 +22,8 @@
 
 NSRect ShiftIt_Left(NSSize screenSize, NSRect windowRect) {
 	NSRect r;
-	r.size.height = windowRect.size.height;
-	r.origin.y = windowRect.origin.y;
+	r.size.height = screenSize.height;
+	r.origin.y = 0;
 	
 	if(windowRect.origin.x == 0) {
 		r.size.width = SizeIt(windowRect.size.width, screenSize.width, ERROR_BAR_X); 
@@ -37,8 +37,8 @@ NSRect ShiftIt_Left(NSSize screenSize, NSRect windowRect) {
 
 NSRect ShiftIt_Right(NSSize screenSize, NSRect windowRect) {
 	NSRect r;
-	r.size.height = windowRect.size.height;
-	r.origin.y = windowRect.origin.y;
+	r.size.height = screenSize.height;
+	r.origin.y = 0;
 	
 	if(fabsf(windowRect.origin.x + windowRect.size.width - screenSize.width) < ERROR_BAR_X) {
 		r.size.width = SizeIt(windowRect.size.width, screenSize.width, ERROR_BAR_X); 
@@ -52,8 +52,8 @@ NSRect ShiftIt_Right(NSSize screenSize, NSRect windowRect) {
 
 NSRect ShiftIt_Top(NSSize screenSize, NSRect windowRect) {
 	NSRect r;
-	r.size.width = windowRect.size.width;
-	r.origin.x = windowRect.origin.x;
+	r.size.width = screenSize.width;
+	r.origin.x = 0;
 	
 	if(windowRect.origin.y == 0) {
 		r.size.height = SizeIt(windowRect.size.height, screenSize.height, ERROR_BAR_Y); 
@@ -67,8 +67,8 @@ NSRect ShiftIt_Top(NSSize screenSize, NSRect windowRect) {
 
 NSRect ShiftIt_Bottom(NSSize screenSize, NSRect windowRect) {
 	NSRect r;
-	r.size.width = windowRect.size.width;
-	r.origin.x = windowRect.origin.x;
+	r.size.width = screenSize.width;
+	r.origin.x = 0;
 	
 	if( fabsf(windowRect.origin.y + windowRect.size.height - screenSize.height) < ERROR_BAR_Y ){
 		r.size.height = SizeIt(windowRect.size.height, screenSize.height,ERROR_BAR_Y); 
